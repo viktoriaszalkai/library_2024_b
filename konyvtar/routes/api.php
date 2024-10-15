@@ -25,8 +25,10 @@ Route::get('/copies', [CopyController::class, 'index']);
 Route::post('/copy', [CopyController::class, 'store']);
 Route::get('/copy/{id}', [CopyController::class, 'show']);
 //LENDING
+
 Route::get('/lendings', [LendingController::class, 'index']);
 Route::post('/lending', [LendingController::class, 'store']);
+//módosítás és PATCH!
 Route::get('/lending/{user_id}/{copy_id}/{start}', [LendingController::class, 'show']);
-Route::put('/lending/{user_id}/{copy_id}/{start}', [LendingController::class, 'update']);
+Route::patch('/lending/{user_id}/{copy_id}/{start}', [LendingController::class, 'update']);
 Route::delete('/lending/{user_id}/{copy_id}/{start}', [LendingController::class, 'destroy']);

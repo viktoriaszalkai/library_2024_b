@@ -17,6 +17,8 @@ return new class extends Migration
             $table->foreignId('user_id')->references('id')->on('users');
             $table->foreignId('copy_id')->references('copy_id')->on('copies');
             $table->date('start')->default('2020-01-01');
+            $table->date('end')->nullable(); //nem kötelező kitölteni
+            $table->smallInteger('warning')->default(0);
             $table->timestamps();
         });
     }
